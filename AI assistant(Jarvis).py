@@ -8,6 +8,7 @@ import os
 # import pyautogui  
 import psutil
 import pyjokes
+from pygame import mixer
 
 
 engine=pyttsx3.init()
@@ -149,6 +150,15 @@ if __name__=='__main__':
         #     songs_dir = 'F:\musics\music'
         #     songs = os.listdir(songs_dir)
         #     os.startfile(os.path.join(songs_dir, songs[0])
+        
+        elif 'play music' in query:
+            speak('Playing Music ')
+            music_dir = 'full_path'
+            mixer.init()
+            mixer.music.load('music_dir')
+            mixer.music.play()
+        elif 'stop music' in query:
+            mixer.music.stop()
     
         elif "remember that" in query:
             speak('what should i remember?')
