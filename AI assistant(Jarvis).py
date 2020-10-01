@@ -155,7 +155,7 @@ if __name__=='__main__':
             speak('Playing Music ')
             music_dir = 'full_path'
             mixer.init()
-            mixer.music.load('music_dir')
+            mixer.music.load(music_dir)
             mixer.music.play()
         elif 'stop music' in query:
             mixer.music.stop()
